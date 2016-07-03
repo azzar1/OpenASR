@@ -27,3 +27,11 @@
 *.exe
 *.out
 *.app
+
+# Bazel
+bazel-OpenASR
+bazel-bin
+bazel-genfiles
+bazel-out
+bazel-testlogs
+
