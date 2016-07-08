@@ -7,7 +7,7 @@
     {
       'target_name': 'openasr_unittests',
       'type': 'executable',
-      'dependencies':[
+      'dependencies': [
         '../gtest.gyp:gtest',
         '../gtest.gyp:gtest_main',
         '../gmock.gyp:gmock',

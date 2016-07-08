@@ -31,12 +31,14 @@ TEST(TestLogger, TestModuleName) {
 
 TEST(TestLogger, TestSetLevel) {
   Logger logger("testing");
+
   EXPECT_EQ(logger.GetLogLevel(), Level::NotSpecified);
   EXPECT_EQ(logger.GetEffectiveLogLevel(), Level::Warning);
   EXPECT_TRUE(logger.IsErrorEnabled());
   EXPECT_TRUE(logger.IsWarningEnabled());
   EXPECT_FALSE(logger.IsInfoEnabled());
   EXPECT_FALSE(logger.IsDebugEnabled());
+
   logger.SetLogLevel(Level::Debug);
   EXPECT_EQ(logger.GetLogLevel(), Level::Debug);
   EXPECT_EQ(logger.GetEffectiveLogLevel(), Level::Debug);
@@ -44,6 +46,7 @@ TEST(TestLogger, TestSetLevel) {
   EXPECT_TRUE(logger.IsWarningEnabled());
   EXPECT_TRUE(logger.IsInfoEnabled());
   EXPECT_TRUE(logger.IsDebugEnabled());
+
   logger.SetLogLevel(Level::Info);
   EXPECT_EQ(logger.GetLogLevel(), Level::Info);
   EXPECT_EQ(logger.GetEffectiveLogLevel(), Level::Info);
@@ -51,6 +54,7 @@ TEST(TestLogger, TestSetLevel) {
   EXPECT_TRUE(logger.IsWarningEnabled());
   EXPECT_TRUE(logger.IsInfoEnabled());
   EXPECT_FALSE(logger.IsDebugEnabled());
+
   logger.SetLogLevel(Level::Warning);
   EXPECT_EQ(logger.GetLogLevel(), Level::Warning);
   EXPECT_EQ(logger.GetEffectiveLogLevel(), Level::Warning);
@@ -58,6 +62,7 @@ TEST(TestLogger, TestSetLevel) {
   EXPECT_TRUE(logger.IsWarningEnabled());
   EXPECT_FALSE(logger.IsInfoEnabled());
   EXPECT_FALSE(logger.IsDebugEnabled());
+
   logger.SetLogLevel(Level::Error);
   EXPECT_EQ(logger.GetLogLevel(), Level::Error);
   EXPECT_EQ(logger.GetEffectiveLogLevel(), Level::Error);
@@ -65,6 +70,7 @@ TEST(TestLogger, TestSetLevel) {
   EXPECT_FALSE(logger.IsWarningEnabled());
   EXPECT_FALSE(logger.IsInfoEnabled());
   EXPECT_FALSE(logger.IsDebugEnabled());
+
   logger.SetLogLevel(Level::NotSpecified);
   EXPECT_EQ(logger.GetLogLevel(), Level::NotSpecified);
   EXPECT_EQ(logger.GetEffectiveLogLevel(), Level::Warning);

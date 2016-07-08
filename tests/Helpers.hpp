@@ -39,7 +39,6 @@ private:
   std::ostringstream sout_;
 };
 
-
 }
 }
 
