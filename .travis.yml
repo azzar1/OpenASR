@@ -1,2 +1,10 @@
 sudo: required
 dist: trusty
+
+before_install:
+  - sudo apt-get install gyp
+
+install:
+  - gyp openasr.gyp --depth=. -Dlibrary=shared_library
+  - make ALL
+  - ./out/Release/openasr_unittests
