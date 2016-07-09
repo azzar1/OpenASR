@@ -3,6 +3,7 @@ dist: trusty
 
 before_install:
   - sudo apt-get install gyp
+  - sudo apt-get install libboost-dev
 
 install:
   - gyp openasr.gyp --depth=. -Dlibrary=shared_library
